@@ -86,7 +86,7 @@ export default function SwileForme() {
               <SliderMark value={75} mt="1" ml="-2.5" fontSize="sm">
                 75%
               </SliderMark>
-              <SliderMark
+              {/* <SliderMark
                 value={sliderValue}
                 textAlign="center"
                 bg="blue.500"
@@ -96,7 +96,7 @@ export default function SwileForme() {
                 w="12"
               >
                 {sliderValue}%
-              </SliderMark>
+              </SliderMark> */}
               <SliderTrack>
                 <SliderFilledTrack />
               </SliderTrack>
