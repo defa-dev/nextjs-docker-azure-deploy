@@ -48,4 +48,4 @@ jobs:
         app-name: 'nttLabFrontApp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_915af85cebe6485ba29d1fe203c043c5 }}
-        images: 'nttlabcr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_653f9e7a9206483eb5e87ad703668684 }}/react/nextjs:${{ github.sha }}'
+        images: 'nttlabcr.azurecr.io/react/nextjs:${{ github.sha }}'
