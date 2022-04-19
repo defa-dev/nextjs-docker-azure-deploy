@@ -18,7 +18,7 @@ export default function Home() {
             Swile Form
           </Button>
         </Link>
-        <Text> Exemplo de landing page NTTLab</Text>
+        <Text>Exemplo de landing page NTTLab</Text>
       </VStack>
     </Flex>
   );

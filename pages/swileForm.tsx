@@ -2,31 +2,21 @@ import {
   Button,
   Flex,
   FormControl,
-  FormErrorMessage,
-  FormHelperText,
   FormLabel,
-  Heading,
   HStack,
   Input,
-  Radio,
-  RadioGroup,
-  RangeSlider,
-  RangeSliderFilledTrack,
-  RangeSliderThumb,
-  RangeSliderTrack,
   Slider,
   SliderFilledTrack,
   SliderMark,
   SliderThumb,
   SliderTrack,
   Stack,
-  VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { api } from "../services/api";
 
-export default function SwileForme() {
+export default function SwileForm() {
   const [sliderValue, setSliderValue] = useState(50);
   const [emailInput, setEmailInput] = useState("");
 
