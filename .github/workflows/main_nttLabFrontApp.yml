@@ -47,7 +47,7 @@ jobs:
       with:
         app-name: 'nttLabFrontApp'
         slot-name: 'qa'
-        publish-profile: ${{ AZUREAPPSERVICE_PUBLISHPROFILE_QA_SLOT }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_QA_SLOT }}
         images: 'nttlabcr.azurecr.io/react/nextjs:${{ github.sha }}'
 
 
