@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: nttlabcr.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_653f9e7a9206483eb5e87ad703668684 }}/react/nextjs:${{ github.sha }}
+        tags: nttlabcr.azurecr.io/react/nextjs:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
