@@ -32,10 +32,28 @@ jobs:
         push: true
         tags: nttlabcr.azurecr.io/react/nextjs:${{ github.sha }}
         file: ./Dockerfile
-
-  deploy:
+  
+  qa-deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: 'qa'
+      url: ${{ steps.deploy-to-qa-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to QA Azure Web App
+      id: deploy-to-qa-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'nttLabFrontApp'
+        slot-name: 'qa'
+        publish-profile: ${{ AZUREAPPSERVICE_PUBLISHPROFILE_QA_SLOT }}
+        images: 'nttlabcr.azurecr.io/react/nextjs:${{ github.sha }}'
+
+
+  prod-deploy:
+    runs-on: ubuntu-latest
+    needs: qa-deploy
     environment:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
