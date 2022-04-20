@@ -30,6 +30,10 @@ jobs:
         working-directory: ./terraform/container_registry
         if: steps.plan.outcome == 'failure'
         run: exit 1
+
+      - name: Terraform destroy
+        working-directory: ./terraform/container_registry
+        run: terraform destroy -input=false -auto-approve
       
       - name: Terraform apply
         working-directory: ./terraform/container_registry
