@@ -59,7 +59,7 @@ jobs:
 
   qa-deploy:
     runs-on: ubuntu-latest
-    needs: tests
+    needs: jest
     environment:
       name: 'qa'
       url: ${{ steps.deploy-to-qa-webapp.outputs.webapp-url }}
