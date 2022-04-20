@@ -45,7 +45,7 @@ jobs:
 
       - name: Terraform output
         working-directory: ./terraform/container_registry
-        run: terraform output -json  
+        run: terraform output -json > data.json 
 
       # - name: Get Properties From JSON File
       #   # You may pin to the exact commit or the version.
