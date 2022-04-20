@@ -48,8 +48,8 @@ jobs:
       - name: Call terraform output
         working-directory: ./terraform/container_registry
         run: | 
-            terraform output
-            echo TEST=$(terraform output) >> $GITHUB_ENV
+            terraform output -json
+            echo TEST=$(terraform output -json) >> $GITHUB_ENV
             echo ${{ env.TEST }}
 
       # - name: Use Output
