@@ -45,10 +45,11 @@ jobs:
         working-directory: ./terraform/container_registry
         run: terraform apply -input=false -auto-approve
 
-      - name: Terraform output
-        id: terraformOutput
+      - name: Call terraform output
         working-directory: ./terraform/container_registry
-        run: echo "::set-output registry-data=data::$(terraform output)"
+        run: |
+          output=$(terraform output)
+          echo $output
 
       # - name: Use Output
       #   run: echo "credentials: $(terraform output my_arn)" > my_file.txt
