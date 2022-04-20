@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "terraform-rg"
+  name     = "terraform-rg-t01"
   location = "eastus"
 }
 
