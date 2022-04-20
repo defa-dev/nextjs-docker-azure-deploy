@@ -17,6 +17,8 @@ jobs:
 
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.0
+        with:
+          terraform_wrapper: false
 
       - name: Terraform init
         working-directory: ./terraform/container_registry
@@ -44,8 +46,12 @@ jobs:
         run: terraform apply -input=false -auto-approve
 
       - name: Terraform output
+        id: terraformOutput
         working-directory: ./terraform/container_registry
-        run: terraform output -json > data.json 
+        run: echo "::set-output registry-data=data::$(terraform output)"
+
+      # - name: Use Output
+      #   run: echo "credentials: $(terraform output my_arn)" > my_file.txt
 
       # - name: Get Properties From JSON File
       #   # You may pin to the exact commit or the version.
