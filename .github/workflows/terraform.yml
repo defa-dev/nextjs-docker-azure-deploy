@@ -58,6 +58,11 @@ jobs:
             echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
             terraform output -json >> $GITHUB_ENV
             echo 'EOF' >> $GITHUB_ENV
+      
+      - name: Use the value
+        id: step_two
+        run: |
+            echo "${{ env.JSON_RESPONSE }}"
 
       # - name: Get Properties From JSON File
       #   # You may pin to the exact commit or the version.
