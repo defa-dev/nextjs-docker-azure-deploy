@@ -22,6 +22,10 @@ jobs:
         working-directory: ./terraform/container_registry
         run: terraform init
 
+      - name: Terraform destroy
+        working-directory: ./terraform/container_registry
+        run: terraform destroy -input=false -auto-approve
+
       - name: Terraform plan
         working-directory: ./terraform/container_registry
         run: terraform plan -input=false 
