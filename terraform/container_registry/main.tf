@@ -1,19 +1,10 @@
-resource "random_name" "server" {
-  keepers = {
-    # Generate a new id each time we switch to a new AMI id
-    rg_name = "${var.rg_name}"
-  }
-
-  byte_length = 16
-}
-
 resource "azurerm_resource_group" "rg" {
-  name     = var.rg_name
+  name     = "terraform-rg-t03"
   location = "eastus"
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "terraformcrt01"
+  name                = "terraformcrt03"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku                 = "Premium"
@@ -21,7 +12,7 @@ resource "azurerm_container_registry" "acr" {
 
   tags = {
     env  = "prod"
-    name = "terraform-cr"
+    name = "terraform-crt03"
   }
 
 }
