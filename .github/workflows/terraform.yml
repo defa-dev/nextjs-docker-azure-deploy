@@ -15,7 +15,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v3
 
-      - name: HashiCorp - Setup Terraform
+      - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.0
         with:
           terraform_wrapper: false
@@ -45,12 +45,12 @@ jobs:
         working-directory: ./terraform/container_registry
         run: terraform apply -input=false -auto-approve
 
-      - name: Call terraform output
+      - name: Terraform output
         working-directory: ./terraform/container_registry
         run: | 
             terraform output -json
-            echo TEST=$(terraform output -json) >> $GITHUB_ENV
-            echo ${{ env.TEST }}
+            echo "terraform_output=$(terraform output -json)" >> $GITHUB_ENV
+            echo "${{ env.terraform_output }}"
 
       # - name: Use Output
       #   run: echo "credentials: $(terraform output my_arn)" > my_file.txt
