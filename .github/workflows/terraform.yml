@@ -33,7 +33,7 @@ jobs:
       
       - name: Terraform apply
         working-directory: ./terraform/container_registry
-        run: terraform plan -input=false
+        run: terraform apply -input=false
 
       - name: Terraform output
         working-directory: ./terraform/container_registry
