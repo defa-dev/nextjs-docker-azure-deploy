@@ -3,6 +3,7 @@ import {
   Flex,
   FormControl,
   FormLabel,
+  Heading,
   HStack,
   Input,
   Slider,
@@ -41,12 +42,13 @@ export default function SwileForm() {
         as="form"
         width="100%"
         maxWidth={360}
-        bg="blackAlpha.600"
+        bg="gray.100"
         p="8"
         borderRadius={8}
         flexDir="column"
         onSubmit={handleSubmit}
       >
+        <Heading mb="10" >Formulário de satisfação swile</Heading>
         <Stack spacing="10">
           <FormControl>
             <FormLabel htmlFor="email">E-mail</FormLabel>
@@ -76,7 +78,7 @@ export default function SwileForm() {
               <SliderMark value={75} mt="1" ml="-2.5" fontSize="sm">
                 75%
               </SliderMark>
-              {/* <SliderMark
+              <SliderMark
                 value={sliderValue}
                 textAlign="center"
                 bg="blue.500"
@@ -86,7 +88,7 @@ export default function SwileForm() {
                 w="12"
               >
                 {sliderValue}%
-              </SliderMark> */}
+              </SliderMark>
               <SliderTrack>
                 <SliderFilledTrack />
               </SliderTrack>
