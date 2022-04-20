@@ -1,5 +1,14 @@
+resource "random_name" "server" {
+  keepers = {
+    # Generate a new id each time we switch to a new AMI id
+    rg_name = "${var.rg_name}"
+  }
+
+  byte_length = 16
+}
+
 resource "azurerm_resource_group" "rg" {
-  name     = "terraform-rg-t01"
+  name     = var.rg_name
   location = "eastus"
 }
 
