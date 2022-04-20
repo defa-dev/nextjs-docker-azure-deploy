@@ -21,5 +21,5 @@ output "cr_login_server" {
 
 output "cr_admin_username" {
   description = "Container registry password"
-  value = azurerm_container_registry.acr.dmin_username
+  value = azurerm_container_registry.acr.admin_username
 }
