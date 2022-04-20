@@ -49,7 +49,7 @@ jobs:
 
   qa-deploy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: tests
     environment:
       name: 'qa'
       url: ${{ steps.deploy-to-qa-webapp.outputs.webapp-url }}
