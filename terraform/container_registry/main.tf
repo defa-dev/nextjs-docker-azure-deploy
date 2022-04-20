@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "rg" {
-  name     = "terraform-rg-t01"
+  name     = "terraform-rg-t02"
   location = "eastus"
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = "terraformcrt01"
+  name                = "terraformcrt02"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   sku                 = "Premium"

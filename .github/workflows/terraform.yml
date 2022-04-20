@@ -47,7 +47,7 @@ jobs:
 
       - name: Call terraform output
         run: |
-          output=$(terraform output test)
+          output=$(terraform output)
           echo $output
 
       # - name: Use Output
