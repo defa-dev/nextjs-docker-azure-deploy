@@ -35,27 +35,13 @@ jobs:
 
   jest:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v1
       - name: Run Tests
         run: |
           yarn
           yarn test
-  
-  # tests:
-  #   runs-on: 'ubuntu-latest'
-  #   needs: build
-  #   steps:
-  #   - name: Set up Node version
-  #     uses: actions/setup-node@v1
-  #     with:
-  #       node-version: '14.x'
-
-  #   - name: npm install and test
-  #     uses: ./
-  #     run: |
-  #       yarn
-  #       yarn test --if-present
 
   qa-deploy:
     runs-on: ubuntu-latest

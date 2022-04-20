@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "jest --watchAll"
+    "test": "jest"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
