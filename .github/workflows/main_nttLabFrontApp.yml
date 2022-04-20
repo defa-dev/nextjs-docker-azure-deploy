@@ -43,6 +43,7 @@ jobs:
         node-version: '14.x'
 
     - name: npm install and test
+      uses: ./
       run: |
         yarn
         yarn test --if-present
