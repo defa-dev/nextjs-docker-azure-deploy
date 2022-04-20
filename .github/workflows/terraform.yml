@@ -47,9 +47,10 @@ jobs:
 
       - name: Call terraform output
         working-directory: ./terraform/container_registry
-        run: |
-          output=$(terraform output)
-          echo $output
+        run: | 
+            terraform output
+            echo TEST=$(terraform output) >> $GITHUB_ENV
+            echo ${{ env.TEST }}
 
       # - name: Use Output
       #   run: echo "credentials: $(terraform output my_arn)" > my_file.txt
