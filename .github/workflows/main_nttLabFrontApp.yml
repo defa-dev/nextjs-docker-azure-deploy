@@ -42,10 +42,10 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: npm install, build, and test
+    - name: npm install and test
       run: |
-        npm install
-        npm run test --if-present
+        yarn
+        yarn test --if-present
 
   qa-deploy:
     runs-on: ubuntu-latest
