@@ -26,7 +26,7 @@ Next steps...
 - [ ]  Bind the Terraform created resources to the deploy pipeline so nothing need to be created manually
 
 Made with :orange_heart:	
-Get in touch :call_me_hand:	
+[Get in touch](https://www.linkedin.com/in/felipe-defacio-806695106/) :call_me_hand:	
 
 
 ## NTTLab
